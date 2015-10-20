@@ -12,11 +12,8 @@
 
 function buscaPrevisao(paramCidade, paramEstado) {
 
-	console.log(paramCidade);
-	console.log(paramCidade);
-
   var previsaoApi = "http://developers.agenciaideias.com.br/tempo/json/" + paramCidade +"-" + paramEstado +"";
-  console.log(previsaoApi);
+
   $.ajax({
           type: "POST",
           url: previsaoApi,
@@ -96,6 +93,10 @@ function buscaPrevisao(paramCidade, paramEstado) {
 				  <option value="FlorianopolisP">Florianopolis</option>
 				  <option value="Joinvile">Joinvile</option>
 				  <option value="Gaspar">Gaspar</option>
+					<option value="Jaragua do Sul">Jaragua do Sul</option>
+					<option value="Rio do Sul">Rio do Sul</option>
+					<option value="Indaial">Indaial</option>
+					<option value="Ascurra">Ascurra</option>
 				</select>
 			</div>
 			<div class="div-botao-pesquisar">
