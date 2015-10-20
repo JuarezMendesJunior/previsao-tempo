@@ -1,0 +1,162 @@
+﻿<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<title>Previsão do Tempo</title>
+</head>
+<body>
+<script  type="text/javascript">
+ $(document).ready(function () {
+ 	buscaPrevisao("Blumenau","SC");
+});
+
+function buscaPrevisao(paramCidade, paramEstado) {
+
+	console.log(paramCidade);
+	console.log(paramCidade);
+
+  var previsaoApi = "http://developers.agenciaideias.com.br/tempo/json/" + paramCidade +"-" + paramEstado +"";
+  console.log(previsaoApi);
+  $.ajax({
+          type: "POST",
+          url: previsaoApi,
+          dataType: "json",
+          success: function (dados) {
+                 $("hr").css("display", "block");
+								 $("#nomeCidade").text(dados.cidade);
+								 $("#descPrevisao").text(dados.agora.descricao);
+								 $("#descTempAtual").text(dados.agora.temperatura + "°");
+								 $("#imgPrevisao").attr("src", dados.agora.imagem);
+								 $("#imgPrevisao").css("display", "block");
+								 for (var i = 1; i <= 4; i++) {
+									var max = "#descTempMaxDia" + i;
+									var min = "#descTempMinDia" + i;
+									var data = "#descDataDia" + i;
+									var img = "#imgTempDia" + i;
+
+								 	$(max).text(dados.previsoes[i].temperatura_max + "°");
+									$(min).text(dados.previsoes[i].temperatura_min + "°");
+									$(data).text(dados.previsoes[i].data);
+									$(img).attr("src", dados.previsoes[i].imagem);
+									$(img).css("display", "block");
+
+								 }
+
+             },
+          error: function (exception) {
+              console.log(exception);
+          }
+      });
+
+}
+
+
+</script>
+
+</script>
+<div class="header">
+	<div class="campos-pesquisa">
+		<div class="campos-filtro-pesquisa">
+			<div class="campo-pesquisa-estado">
+				<select id="estados">
+					<option value="SC">SC</option>
+					<option value="AC">AC</option>
+					<option value="AL">AL</option>
+					<option value="AP">AP</option>
+					<option value="AM">AM</option>
+					<option value="BA">BA</option>
+					<option value="CE">CE</option>
+					<option value="DF">DF</option>
+					<option value="ES">ES</option>
+					<option value="GO">GO</option>
+					<option value="MA">MA</option>
+					<option value="MS">MS</option>
+					<option value="MT">MT</option>
+					<option value="MG">MG</option>
+					<option value="PA">PA</option>
+					<option value="PB">PB</option>
+					<option value="PR">PR</option>
+					<option value="PE">PE</option>
+					<option value="PI">PI</option>
+					<option value="RJ">RJ</option>
+					<option value="RN">RN</option>
+					<option value="RS">RS</option>
+					<option value="RO">RO</option>
+					<option value="RR">RR</option>
+					<option value="SC">SC</option>
+					<option value="SP">SP</option>
+					<option value="SE">SE</option>
+					<option value="TO">TO</option>
+
+				</select>
+			</div>
+			<div class="campo-pesquisa-cidade">
+				<select id="cidades">
+				  <option value="Blumenau">Blumenau</option>
+				  <option value="FlorianopolisP">Florianopolis</option>
+				  <option value="Joinvile">Joinvile</option>
+				  <option value="Gaspar">Gaspar</option>
+				</select>
+			</div>
+			<div class="div-botao-pesquisar">
+				<input type="button" id="button-buscar" value="Buscar" onclick="buscaPrevisao($('#cidades').val(), $('#estados').val())" />
+			</div>
+		</div>
+	</div>
+	<div class="campo-pesquisada">
+		<div class="div-cidade-pesquisada">
+			<div class="nome-cidade-pesquisada">
+				<span id="nomeCidade"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="div-previsao">
+	<div class="div-header-previsao">
+		<div class="div-circ-status-previsao">
+			<img id="imgPrevisao" style="display:none; height: 112px; width: 112px; padding: 25px;">
+		</div>
+		<div class="div-desc-status-previsao">
+				<span id="descPrevisao"></span>
+		</div>
+		<div class="campo-temperatura-atual">
+			<div class="div-temperatura-atual">
+				<span id="descTempAtual"></span>
+			</div>
+		</div>
+		<div class="campo-temperatura-semana">
+			<div class="div-temperatura-dia">
+				<img id="imgTempDia1" class="img-dia-semana">
+				<span class="desc-max-temp-semana" id="descTempMaxDia1"></span><br>
+				<span class="desc-min-temp-semana" id="descTempMinDia1"></span><br>
+				<span class="desc-dia-temp-semana" id="descDataDia1"></span>
+			</div>
+			<hr>
+			<div class="div-temperatura-dia">
+				<img id="imgTempDia2" class="img-dia-semana">
+				<span class="desc-max-temp-semana" id="descTempMaxDia2"></span><br>
+				<span class="desc-min-temp-semana" id="descTempMinDia2"></span><br>
+				<span class="desc-dia-temp-semana" id="descDataDia2"></span>
+			</div>
+			<hr>
+			<div class="div-temperatura-dia">
+				<img id="imgTempDia3" class="img-dia-semana">
+				<span class="desc-max-temp-semana" id="descTempMaxDia3"></span><br>
+				<span class="desc-min-temp-semana" id="descTempMinDia3"></span><br>
+				<span class="desc-dia-temp-semana" id="descDataDia3"></span>
+			</div>
+			<hr>
+			<div class="div-temperatura-dia">
+				<img id="imgTempDia4" class="img-dia-semana">
+				<span class="desc-max-temp-semana" id="descTempMaxDia4"></span><br>
+				<span class="desc-min-temp-semana" id="descTempMinDia4"></span><br>
+				<span class="desc-dia-temp-semana" id="descDataDia4"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

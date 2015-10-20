@@ -1,0 +1,267 @@
+body {
+	background: #97CBF7;
+
+}
+
+.box-principal {
+	border: 1px solid #AAAAAA;
+	font-size: 25px;
+
+}
+
+.header {
+	height: 100px;
+	background: #2A5C86;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	margin-left: -8px;
+	display: flex;
+}
+
+@media only screen and (max-height: 700px){
+		.div-previsao { height: 60% !important;}
+		.campo-temperatura-atual { height: 130px !important;}
+		.campo-temperatura-semana { height: 130px !important;}
+
+}
+
+@media only screen and (max-width: 800px){
+    .header { display: block; height: 200px}
+		.div-previsao {margin-top: 300px !important}
+		.campos-pesquisa {    width: 80% !important; margin: 0 auto;}
+}
+
+@media only screen and (max-width: 680px){
+    #descPrevisao { font-size: 35px !important}
+		.campos-pesquisa {    width: 90%; margin: 0 auto;}
+
+}
+
+@media only screen and (max-width: 580px){
+    #descPrevisao { font-size: 25px !important}
+		.div-desc-status-previsao {    top: 10% !important; position: relative !important;}
+		#imgPrevisao {height: 96px !important;     width: 96px !important;    padding: 23px !important;}
+		.div-circ-status-previsao { width: 140px !important; height: 140px !important}
+}
+
+@media only screen and (max-width: 480px){
+    #descPrevisao { font-size: 20px !important}
+		.div-desc-status-previsao {    top: 10% !important; position: relative !important;}
+}
+
+.div-previsao {
+	background: #FFFFFF;
+	width: 85%;
+	margin: 0 auto;
+	height: 70%;
+	margin-top: 200px;
+	border-radius: 5px;
+}
+
+.div-header-previsao {
+	width: 100%;
+  height: 80px;
+  background: #235075;
+	border-top-left-radius: 5px;
+}
+
+.div-circ-status-previsao {
+	float: right;
+    width: 160px;
+    height: 160px;
+    background: #235075;
+    border-radius: 80px;
+    margin-top: -35px;
+    margin-right: -35px;
+}
+
+.campos-pesquisa {
+	display: flex;
+	padding: 20px;
+	width: 50%;
+}
+
+.campos-filtro-pesquisa {
+	display: flex;
+	background: #3470A2;
+  border-radius: 5px;
+	margin: 0 auto;
+}
+
+
+.campo-pesquisa-estado {
+	padding: 15px;
+
+}
+
+.campo-pesquisa-cidade {
+	padding: 15px;
+}
+
+.div-botao-pesquisar {
+	padding: 15px;
+}
+
+#estados {
+	height: 30px;
+	width: 70px;
+	border: 1px solid #CBCBCB;
+  border-radius: 3px;
+}
+
+#cidades {
+	height: 30px;
+	width: 200px;
+	border: 1px solid #CBCBCB;
+  border-radius: 3px;
+}
+
+#button-buscar {
+	height: 30px;
+  width: 80px;
+  border: 1px solid #47B747;
+  background: #47B747;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.div-cidade-pesquisada {
+	width: 85%;
+  height: 60px;
+  background: #3470A2;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.campo-pesquisada {
+	width: 100%
+}
+
+.nome-cidade-pesquisada {
+	width: 85%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 15px;
+
+}
+
+#nomeCidade {
+	font-size: 28px;
+	font-weight: bold;
+	color: white;
+	font-family: sans-serif;
+
+}
+
+.div-desc-status-previsao {
+	height: 60px;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+
+}
+
+#descPrevisao {
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	font-family: sans-serif;
+
+}
+
+.campo-temperatura-atual {
+
+	height: 200px;
+	width: 33%;
+	text-align: center;
+}
+
+.div-temperatura-atual {
+	width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+	position: relative;
+ top: 50%;
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ transform: translateY(-50%);
+
+}
+
+#descTempAtual {
+	font-size: 95px;
+	font-weight: bold;
+	color: gray;
+	font-family: sans-serif;
+
+}
+
+.campo-temperatura-semana {
+	height: 200px;
+  display: flex
+
+}
+
+.div-temperatura-dia {
+	height: 100px;
+  width: 25%;
+	text-align: center;
+	position: relative;
+ top: 50%;
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ transform: translateY(-50%);
+}
+
+.desc-max-temp-semana {
+	text-align: center;
+	color: #808080;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+
+.desc-min-temp-semana {
+	text-align: center;
+	color: #808080;
+	font-weight: bold;
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+.desc-dia-temp-semana {
+	text-align: center;
+	color: #808080;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+ hr {
+  display: none;
+	width: 2px;
+	height: 120px;
+	margin: 0;
+	background: #CBCBCB;
+	border: none;
+	position: relative;
+	top: 65%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+ }
+
+ .img-dia-semana {
+	 	display: none;
+    height: 60px;
+    width: 60px;
+    margin-left: 33%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+ }
